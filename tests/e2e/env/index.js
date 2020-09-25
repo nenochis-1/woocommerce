@@ -10,6 +10,20 @@ const {
 const { getAppRoot, getTestConfig } = require( './utils' );
 const webpackAlias = require( './webpack-alias' );
 
+const {
+	clickAndWaitForNewPage,
+	getAccountCredentials,
+	isEventuallyPresent,
+	isEventuallyVisible,
+	logDebugLog,
+	logHTML,
+	waitAndClick,
+	waitAndType,
+	waitForSelector,
+	scrollIntoView,
+	Page
+} = require( '@automattic/puppeteer-utils' );
+
 module.exports = {
 	babelConfig,
 	esLintConfig,
@@ -20,4 +34,15 @@ module.exports = {
 	getAppRoot,
 	getTestConfig,
 	webpackAlias,
+	clickAndWaitForNewPage,
+	getAccountCredentials,
+	isEventuallyPresent,
+	isEventuallyVisible,
+	logDebugLog,
+	logHTML,
+	waitAndClick,
+	waitAndType,
+	waitForSelector,
+	scrollIntoView,
+	Page,
 };
