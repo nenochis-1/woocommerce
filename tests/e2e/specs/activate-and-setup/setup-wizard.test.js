@@ -16,6 +16,8 @@ import {
 	verifyValueOfInputField
 } from '@woocommerce/e2e-utils';
 
+import { waitAndClick } from '../../env';
+
 describe( 'Store owner can login and make sure WooCommerce is activated', () => {
 	beforeAll( async () => {
 		await StoreOwnerFlow.login();
@@ -98,7 +100,8 @@ describe( 'Store owner can finish initial store setup', () => {
 		await page.click( 'input[value="/%postname%/"]', { text: ' Post name' } );
 
 		// Select "Custom base" in product permalinks section
-		await page.click( '#woocommerce_custom_selection' );
+		// await page.click( '#woocommerce_custom_selection' );
+		await waitAndClick( page, '#woocommerce_custom_selection' );
 
 		// Fill custom base slug to use
 		await expect( page ).toFill( '#woocommerce_permalink_structure', '/product/' );
